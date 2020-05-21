@@ -6,7 +6,6 @@
 import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import img_to_array, load_img, array_to_img
 
 # Circle parameters
 radius = 3
@@ -18,10 +17,10 @@ gestures = ['fist_dorsal', 'fist_palm', 'open_dorsal',
 
 def realTimeExtraction():
     trained_model = load_model('./saved_models/Sub1weights-best.hdf5')
-    cap = cv2.VideoCapture('D:/data/IIS/Dataset Subsystem 1/videos/test.webm')
-    # cap = cv2.VideoCapture(0 + cv2.CAP_DSHOW)
-    # if not cap.read()[0]:
-    #     cap = cv2.VideoCapture(1 + cv2.CAP_DSHOW)
+    # cap = cv2.VideoCapture('D:/data/IIS/Dataset Subsystem 1/videos/test.webm')
+    cap = cv2.VideoCapture(0 + cv2.CAP_DSHOW)
+    if not cap.read()[0]:
+        cap = cv2.VideoCapture(1 + cv2.CAP_DSHOW)
 
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
@@ -73,10 +72,10 @@ def ExtractionFromImage(filename='./imgs/open_palm_146.jpg'):
 
 def realTimeGesture():
     trained_model = load_model('./saved_models/End2endWeights-best.hdf5')
-    cap = cv2.VideoCapture('D:/data/IIS/Dataset Subsystem 1/videos/test.webm')
-    # cap = cv2.VideoCapture(0 + cv2.CAP_DSHOW)
-    # if not cap.read()[0]:
-    #     cap = cv2.VideoCapture(1 + cv2.CAP_DSHOW)
+    # cap = cv2.VideoCapture('D:/data/IIS/Dataset Subsystem 1/videos/test.webm')
+    cap = cv2.VideoCapture(0 + cv2.CAP_DSHOW)
+    if not cap.read()[0]:
+        cap = cv2.VideoCapture(1 + cv2.CAP_DSHOW)
 
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)

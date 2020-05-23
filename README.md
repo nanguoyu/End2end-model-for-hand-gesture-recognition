@@ -35,7 +35,7 @@ As following images showing, there are 'fist_dorsal', 'fist_palm', 'open_dorsal'
 4. Train a model for handmarks extraction:
 
     ```
-    python test_subsystem1.py
+    python train_SubSystem1.py
     ```
 
 5. Test the end2end model:
